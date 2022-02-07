@@ -1,3 +1,5 @@
+import 'package:catsapp/res/const.dart';
+
 class Breeds {
   final String id;
   final String name;
@@ -11,9 +13,9 @@ class Breeds {
 
   factory Breeds.fromJson(Map<String, dynamic> json) {
     return Breeds(
-      id: json['id'],
-      name: json['name'],
-      image: json['image'] ?? {'url': 'https://i.pinimg.com/474x/c4/e9/51/c4e95143fd1cd97e581dca9032465c0d.jpg'},
+      id: json['id'] ?? 'error id',
+      name: json['name'] ?? 'Error name cat',
+      image: json['image'] ?? {'url': errorImage},
     );
   }
 }
