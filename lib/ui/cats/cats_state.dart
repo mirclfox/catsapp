@@ -1,17 +1,23 @@
 import 'package:catsapp/models/breeds.dart';
 
+enum CatsStatus { initial, success, failure }
 
-abstract class CatsState {
-  List<Breeds>? breeds;
-CatsState({this.breeds});
+class CatsState {
+  CatsStatus catsStatus;
+  List<Breeds> breeds;
+
+  CatsState({
+    this.breeds = const <Breeds>[],
+    this.catsStatus = CatsStatus.initial,
+  });
+
+  CatsState copyWith({
+    CatsStatus? catsStatus,
+    List<Breeds>? breeds,
+  }) {
+    return CatsState(
+      breeds: breeds ?? this.breeds,
+      catsStatus: catsStatus ?? this.catsStatus,
+    );
+  }
 }
-
-class LoadingCatsState extends CatsState{
-}
-
-class LoadedCatsState extends CatsState{
-  List<Breeds>? breeds;
-  LoadedCatsState({required this.breeds}) : super(breeds: breeds);
-}
-
-class ErrorCatsState extends CatsState{}
