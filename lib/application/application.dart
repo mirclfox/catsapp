@@ -8,6 +8,7 @@ class Application extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainLayout(
+        title: 'Cats App',
         page: CatsPage(),
       ),
     );

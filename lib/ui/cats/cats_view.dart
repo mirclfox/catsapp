@@ -44,6 +44,12 @@ class CatsPage extends StatelessWidget {
                               builder: (BuildContext context) => DescriptionPage(
                                 image: state.breeds[index].image['url'],
                                 id: state.breeds[index].id,
+                                description: state.breeds[index].description,
+                                dogFriendly: state.breeds[index].dogFriendly,
+                                energyLevel: state.breeds[index].energyLevel,
+                                temperament: state.breeds[index].temperament,
+                                name: state.breeds[index].name,
+
                               ),
                             ),
                           );
